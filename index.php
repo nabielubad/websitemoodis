@@ -169,11 +169,12 @@ if(isset($_POST['simpan'])){
                 <table class="table">
                     <thead>
                         <tr>
+                            <th class="col-1">No</th>
                             <th class="col-3">Nama Siswa</th>
                             <th class="col-1">Kelas</th>
                             <th class="col-1">Waktu</th>
                             <th class="col-2">Tindakan</th>
-                            <th class="col-3">Gambar</th>
+                            <th class="col-2">Gambar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -188,6 +189,7 @@ if(isset($_POST['simpan'])){
                   
                   ?>
                         <tr>
+                            <td><?php echo $nomor++?></td>
                             <td><?php echo $r1['nama'] ?></td>
                             <td><?php echo $r1['kelas'] ?></td>
                             <td><?php echo $r1['tgl_isi'] ?></td>
