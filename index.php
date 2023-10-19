@@ -16,9 +16,9 @@ if(isset($_POST['simpan'])){
 
    
     if($aksi == '' or $gambar ==''){
-        $error = "Silahkan isi semua data dengan benar!";
+        $sukses = "Silahkan isi semua data dengan benar!";
     }
-    if(empty($error)){
+    if(empty($sukses)){
         
         move_uploaded_file($foto_tmp, 'gambar/'.$gambar);
       
@@ -29,7 +29,7 @@ if(isset($_POST['simpan'])){
         if($q1){
             $sukses = "Sukses melaporkan";
         }else{
-            $error = "Gagal melaporkan";
+            $sukses = "Gagal melaporkan";
         }
     }
 }?>
@@ -66,7 +66,7 @@ if(isset($_POST['simpan'])){
                     <div class="logo">
                         <h1>MOODIS</h1>
                     </div>
-                    <ul class="menu">
+                    <ul class="menu menubro">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#guru">Guru</a></li>
                         <li><a href="#laporan">Laporan</a></li>
@@ -94,7 +94,7 @@ if(isset($_POST['simpan'])){
                         </h1>
                         <p>Kedisiplinan adalah kunci kesuksesan siswa di SMA Negeri 1 Slawi, membantu mereka
                             mengembangkan karakter kuat dan siap menghadapi masa depan.</p>
-                        <button onclick="arahkanKeTujuan()">LAPORKAN!</button>
+                        <button onclick="arahkanKeTujuan()" class="ngilang">LAPORKAN!</button>
                     </div>
                     <div class="box">
                         <img src="assets/img/ngapung.png" alt="" />
@@ -105,11 +105,11 @@ if(isset($_POST['simpan'])){
     </header>
 
     <div class="container">
-        <h1 class="namatabel1" id="guru">
+        <h1 class="namatabel1 bk uf" id="guru">
             DAFTAR GURU BK SMAN 1 SLAWI
         </h1>
         <div class="bodi">
-            <section class="cards">
+            <section class="cards tama">
 
                 <article class="card">
                     <div class="card-info-hover">
@@ -118,12 +118,12 @@ if(isset($_POST['simpan'])){
                     </div>
                     <div class="card-img"></div>
                     <a href="https://wa.me/+628789898034265" target="_blank">
-                        <div class="card-img-hover" style="background-image: url(assets/img/solo.JPG);">
+                        <div class="card-img-hover" style="background-image: url(assets/img/1.JPG);">
                         </div>
                     </a>
                     <div class="card-info">
 
-                        <h3 class="card-title">Gunawan FC</h3>
+                        <h3 class="card-title">Nadiroh</h3>
                         <span class="card-by">
                             No Hp :
                             <p class="card-admin">087898982153</p>
@@ -139,12 +139,12 @@ if(isset($_POST['simpan'])){
                     </div>
                     <div class="card-img"></div>
                     <a href="">
-                        <div class="card-img-hover" style="background-image: url(assets/img/solo.JPG);">
+                        <div class="card-img-hover" style="background-image: url(assets/img/2.JPG);">
                         </div>
                     </a>
                     <div class="card-info">
 
-                        <h3 class="card-title">Gunawan FC</h3>
+                        <h3 class="card-title">Pradita</h3>
                         <span class="card-by">
                             No Hp :
                             <p class="card-admin">087898982153</p>
@@ -161,19 +161,19 @@ if(isset($_POST['simpan'])){
 
     <!-- laporan -->
     <div class="services" id="laporan">
-        <div class="container">
-            <h1 class="namatabel">
+        <div class="containertbl">
+            <h1 class="namatabel1 bk uf">
                 DAFTAR SISWA YANG MELANGGAR TATA TERTIB SMAN 1 SLAWI
             </h1>
             <div class="box-services">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th class="col-1">No</th>
-                            <th class="col-3">Nama Siswa</th>
+
+                            <th class="col-3">Nama</th>
                             <th class="col-1">Kelas</th>
-                            <th class="col-1">Waktu</th>
-                            <th class="col-2">Tindakan</th>
+                            <th class="col-2">Waktu</th>
+                            <th class="col-2">Aksi</th>
                             <th class="col-2">Gambar</th>
                         </tr>
                     </thead>
@@ -189,7 +189,7 @@ if(isset($_POST['simpan'])){
                   
                   ?>
                         <tr>
-                            <td><?php echo $nomor++?></td>
+
                             <td><?php echo $r1['nama'] ?></td>
                             <td><?php echo $r1['kelas'] ?></td>
                             <td><?php echo $r1['tgl_isi'] ?></td>
@@ -210,26 +210,42 @@ if(isset($_POST['simpan'])){
     </div>
     <!-- Services -->
 
-    <div class="containerlapor container" id="laporkan">
-        <h1>SEGERA LAPORKAN PELANGGARAN TATA TERTIB!</h1>
-        <form action="" method="post" enctype="multipart/form-data">
+    <div class="containerlapor " id="laporkan">
+        <h1 class="namatabel1 bk">SEGERA LAPORKAN PELANGGARAN TATA TERTIB!</h1>
+        <form action="" method="post" enctype="multipart/form-data" class="tama">
             <label for="nama">Nama Siswa</label><br />
             <input type="text" id="nama" value="<?php echo $nama ?>" name="nama" /><br />
             <label for="kelas">Kelas</label><br />
             <input type="text" id="kelas" value="<?php echo $kelas ?>" name="kelas" /><br />
-            <label for="aksi">Aksi</label><br />
+            <label for="aksi">Aksi*</label><br />
             <input type="text" id="aksi" value="<?php echo $aksi ?>" name="aksi" /><br />
 
-            <label for="gambar">Bukti</label><br />
+            <label for="gambar">Bukti*</label><br />
             <input type="file" id="gambar" name="gambar" accept="image/jpeg, image/png, image/gif" /><br />
+            <label for="aksi">* Wajib Diisi!</label><br /><br />
             <button type="submit" name="simpan">LAPORKAN!</button>
+
         </form>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <div class="containerftr">
-            <p class="ftr">&copy; Copyright by <span>NABIELL ANJAY MABAR</span></p>
+        <div class="container">
+            <div class="box-footer">
+                <div class="box">
+                    <h2>Moodis</h2>
+                    <p>Moodis, singkatan dari "Murid Disiplin," adalah sebuah aplikasi inovatif yang dirancang untuk
+                        menjaga ketertiban di lingkungan sekolah. Aplikasi ini memungkinkan para siswa untuk melaporkan
+                        pelanggaran tata tertib yang terjadi di sekolah kepada Guru Bimbingan Konseling (BK) sebagai
+                        administrator, sehingga tindakan korektif dapat segera diambil.</p>
+                </div>
+                <div class="box">
+
+                </div>
+                <div class="box">
+                    <p>&copy; Copyright by <span>Kelompok 3 (XI.3) </span> SMAN 1 SLAWI 2023, Indonesia</p>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Footer -->

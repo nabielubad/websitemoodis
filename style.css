@@ -18,7 +18,16 @@ header {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
+.deco {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  cursor: wait;
+}
+.halo {
+  color: #e9da00;
+  font-size: 80px;
+}
 .container {
   width: 80%;
   margin-inline: auto;
@@ -161,16 +170,32 @@ header {
   min-height: 50vh;
   display: flex;
   align-items: center;
-  padding: 100px 0 50px 0;
+  padding: 0px 0 50px 0;
 }
-
+.containertbl {
+  width: 95%;
+  margin-inline: auto;
+}
 .table {
   color: white;
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #0050b3;
 }
-
+.btn {
+  background-color: #e90000;
+  text-decoration: none;
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+}
+.btngambar {
+  background-color: #e9da00;
+  text-decoration: none;
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+}
 .table tr th {
   background: #0050b3;
   color: #fff;
@@ -194,8 +219,13 @@ td {
 .namatabel1 {
   color: white;
   text-align: center;
-  margin-bottom: 50px;
-  padding-top: 50px;
+}
+.namatabel1 h1 {
+  font-size: 30px;
+}
+.uf {
+  margin-bottom: 10px;
+  padding-top: 30px;
 }
 .services .box-services {
   display: flex;
@@ -354,8 +384,10 @@ td {
   margin-inline: 5px;
 }
 .containerlapor {
+  margin-inline: auto;
   padding: 20px 25px;
-  width: 80%;
+  width: 95%;
+
   border: 2px solid #0050b3;
   border-radius: 10px;
 
@@ -590,7 +622,7 @@ td {
 
 @media screen and (max-width: 575px) {
   .hero .box-hero .box:nth-child(1) h1 {
-    font-size: 18px;
+    font-size: 25px;
   }
 }
 
@@ -600,17 +632,6 @@ td {
   }
 }
 
-@media screen and (max-width: 370px) {
-  .hero .box-hero .box:nth-child(2) {
-    width: 55vw;
-    align-self: flex-end;
-    justify-self: center;
-  }
-
-  .pantai .box-pantai {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
 .bodi {
   background-color: transparent;
   display: flex;
@@ -695,7 +716,7 @@ td {
 .card-title {
   margin-top: 5px;
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 }
 
@@ -754,4 +775,60 @@ td {
     display: flex;
     align-items: flex-start;
   }
+}
+@media screen and (max-width: 620px) {
+  .table th,
+  td {
+    font-size: 50%;
+  }
+  .tamahed {
+    font-size: 95%;
+  }
+
+  .tama {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 633px) {
+  .namatabel1 {
+    font-size: calc(30px - 30%);
+  }
+  .tabeladmin {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .hero .box-hero .box:nth-child(1) p {
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .hero .box-hero .box:nth-child(2) {
+    width: 55vw;
+    align-items: flex-start;
+    justify-self: center;
+  }
+
+  .table th,
+  td {
+    font-size: 30%;
+  }
+  .tamahed {
+    font-size: 80%;
+  }
+
+  .tama {
+    font-size: 70%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .btnwrap a {
+    font-size: 5px;
+  }
+}
+.btnwrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3px;
 }

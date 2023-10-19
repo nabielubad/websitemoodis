@@ -1,7 +1,7 @@
 <?php 
 session_start();
-if(isset($_SESSION['admin_username'])!=''){
-    header("location:admin.php");
+if(!isset($_SESSION['admin_username']) && !isset($_SESSION['admin_rahasia'])){
+    header("location:../kamugoblok.php");
     exit();
 }
 include("../inc/inc_koneksi.php");
@@ -11,25 +11,23 @@ $password   = "";
 $err        = "";
 
 if(isset($_POST['Login'])){
-    $username       = $_POST['username'];
+    
     $password       = $_POST['password'];
-    $uss=md5($username);
+    $uss=md5($password);
 
-    if($username == '' or $password == ''){
+    if( $password == ''){
         $err    = "Silakan masukkan semua isian";
     }else{
-        $sql1   = "select * from master where username = '$uss'";
+        $sql1   = "select * from admin where pass = '$uss'";
         $q1     = mysqli_query($koneksi,$sql1);
         $r1     = mysqli_fetch_array($q1);
         $n1     = mysqli_num_rows($q1);
 
-        if($n1 < 1){
-            $err = "Username tidak ditemukan";
-        }elseif($r1['password'] != md5($password)){
+        if($r1['pass'] != md5($password)){
             $err = "Password yang kamu masukkan tidak sesuai";
         }else{
-            $_SESSION['admin_username']     = $username;
-            header("location:admin.php");
+            $_SESSION['admin_rahasia']     = $password;
+            header("location:datarahasia.php");
             exit();
         }
     }
@@ -51,7 +49,7 @@ if(isset($_POST['Login'])){
 
 <body style="width:100%;max-width:330px;margin:auto;padding:15px; background-color:black;">
     <form action="" method="POST">
-        <h1 style="color:white">Login</h1>
+        <h1 style="color:white">Reset Data Perangkat</h1>
         <?php 
         if($err){
         ?>
@@ -61,17 +59,12 @@ if(isset($_POST['Login'])){
         <?php
         }
         ?>
+
         <div class="form-group">
-            <label for="username" style="color:white">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username Anda"
-                value="<?php echo $username?>" />
+            <label for="password" style="color:white">Bahaya!</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Jangan diisi" />
         </div>
-        <div class="form-group">
-            <label for="password" style="color:white">Password</label>
-            <input type="password" class="form-control" id="password" name="password"
-                placeholder="Masukan Password bos" />
-        </div>
-        <button type="submit" class="btn btn-primary mt-3" name="Login">Login</button>
+        <button type="submit" class="btn btn-primary mt-3" name="Login">Hapus Data Perangkat</button>
     </form>
 </body>
 

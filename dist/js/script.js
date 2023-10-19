@@ -1,9 +1,10 @@
 const menuBar = document.querySelector(".menu-bar");
-const menuNav = document.querySelector(".menu");
+const menuNav = document.querySelector(".menubro");
 const navBar = document.querySelector(".navbar");
 
 menuBar.addEventListener("click", () => {
   menuNav.classList.toggle("menu-active");
+
   if (window.scrollY === 0) {
     navBar.classList.toggle("scrolling-active");
   }
