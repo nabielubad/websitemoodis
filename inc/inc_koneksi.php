@@ -11,4 +11,4 @@ if(!$koneksi){
 //$host = "localhost";
 //$user = "redj3298_nabil";
 //$pass = "nabil_farah";
-//$db = "redj3298_informatikates";
+//$db = "redj3298_informatikates";f
