@@ -1,3 +1,1 @@
-<?php
-$currentDir = getcwd();
-echo "Direktori Kerja Saat Ini: " . $currentDir;
+lydn xtnh ikjr mren

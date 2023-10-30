@@ -276,7 +276,7 @@ if (!empty($tgl)) {
 
                 </div>
                 <div class="box">
-                    <p>&copy; Copyright by <span><a href="rahasia.php" class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
+                    <p>&copy; Copyright by <span><a class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
                         SLAWI
                         2023, Indonesia</p>
                 </div>

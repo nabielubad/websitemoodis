@@ -35,7 +35,7 @@ if(isset($_GET['token'])){
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-function kirim_emagiil($email_penerima, $nama_penerima, $judul_email, $isi_email){
+function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     $email_pengirim = "moodissmansawi@gmail.com";
     $nama_pengirim = "MOODIS";
     
@@ -52,7 +52,7 @@ function kirim_emagiil($email_penerima, $nama_penerima, $judul_email, $isi_email
         $mail->Host       = 'smtp.gmail.com';                     
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = $email_pengirim;                     
-        $mail->Password   = 'nabil_farah';                               
+        $mail->Password   = 'lydn xtnh ikjr mren';                               
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
         $mail->Port       = 465;                                    
     
@@ -66,8 +66,11 @@ function kirim_emagiil($email_penerima, $nama_penerima, $judul_email, $isi_email
         
     
         $mail->send();
+        echo "<script>alert('Email Berhasil Terkirim');</script>";
         return "sukses"; 
+        
     } catch (Exception $e) {
+        echo "<script>alert('Email Gagal Terkirim');</script>";
         return "gagal: {$mail->ErrorInfo}";
     }
 }
@@ -77,12 +80,14 @@ if(isset($_POST['kirim'])){
     $nama = $_GET['nama'];
     $namaortu = "Orangtua $nama";
     $email = $_POST['email'];
+    $gambarSrc = "../assets/img/moodis.png";
+$gam = '<img src="' . $gambarSrc . '" alt="Bunga">';
 
-    $judul_email = "Laporan Pelanggaran Tata-tertib : <b>$nama</b>";
+    $judul_email = "Laporan Pelanggaran Tata-tertib : $nama";
     $isi_email = "Kepada Orangtua / Wali Siswa,<br/>";
     $isi_email .="Kami ingin memberitahukan kepada Anda bahwa anak Anda, <b>$nama</b>, telah melakukan pelanggaran tatatertib lebih dari 5 kali dalam kurun waktu 1 bulan terakhir. Kami sangat prihatin dengan kejadian ini dan kami merasa penting untuk berbagi informasi ini dengan Anda.<br/>";
     $isi_email .= "Kami ingin bekerja sama dengan Anda untuk memastikan bahwa anak Anda memahami pentingnya mentaati aturan sekolah dan menjalani pendidikan dengan baik. Agar Anda dapat memantau pelanggaran tatatertib anak Anda, kami telah menyediakan akses ke laporan pelanggaran di laman berikut:<br/>";
-    $isi_email .= "https://localhost/informatika/admin/laporanpelanggaran.php?op=laporan&name=$email <br/>";
+    $isi_email .= "https://localhost/informatika/admin/laporanpelanggaran.php?op=laporan&name=$nama <br/>";
     $isi_email .= "Kami mengharapkan kerjasama Anda dalam mendukung anak Anda untuk memperbaiki perilaku dan menghindari pelanggaran tatatertib di masa mendatang. Jika Anda memiliki pertanyaan atau kekhawatiran, jangan ragu untuk menghubungi kami.<br/>";
     $isi_email .= "Terima kasih atas perhatian Anda dalam hal ini.<br/>";
     $isi_email .= "Hormat kami,<br/>";
@@ -256,7 +261,7 @@ if(isset($_POST['Login'])){
         $ns = "1212";
         $nup = $ns.$nm.$no.$op;
         $tokennya = $nup;
-        if($op == 'email' && $token == $tokennya){
+        if($op == 'email' ){
     $nama = $_GET['nama'];
     
     
@@ -264,7 +269,7 @@ if(isset($_POST['Login'])){
 ?> <div class="hero">
             <div class="container">
                 <div class="containerlaporr blur " id="edit">
-                    <h1 class="namatabel">Kirim Email Untuk <?php echo $nama ?></h1>
+                    <h1 class="namatabel">Kirim Email Untuk Orang Tua Dari :<br /> <?php echo $nama ?></h1>
                     <form action="" method="post" class="tama">
 
 
@@ -300,7 +305,7 @@ if(isset($_POST['Login'])){
 
                 </div>
                 <div class="box">
-                    <p>&copy; Copyright by <span><a href="rahasia.php" class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
+                    <p>&copy; Copyright by <span><a class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
                         SLAWI
                         2023, Indonesia</p>
                 </div>

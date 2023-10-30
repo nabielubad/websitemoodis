@@ -200,7 +200,7 @@ if(isset($_POST['Login'])){
                         <li><a href="#home">Home</a></li>
                         <li><a href="#laporan">Laporan</a></li>
                         <li><a href="#tambah">Data Pelanggaran</a></li>
-                        <li><a href="#uss">Tindakan</a></li>
+                        <li><a href="#kirmail">Tindakan</a></li>
                         <li class="active"><a href="logout.php">Logout</a></li>
                     </ul>
                     <i class="fa-solid fa-bars menu-bar"></i>
@@ -359,7 +359,7 @@ if (!empty($tgl)) {
         </div>
     </div>
     <div class="services" id="">
-        <div class="containertbl">
+        <div class="containertbl" id="kirmail">
             <h1 class="namatabel1  uf">
                 Kirim Email Peringatan
             </h1>
@@ -400,7 +400,7 @@ if (!empty($tgl)) {
 
                             <td>
                                 <div class="btnwrap">
-                                    <a href="guruemail.php?op=email&nama=<?php echo $r1['nama'] ?>&token=<?php echo $nup ?>"
+                                    <a href="guruemail.php?op=email&nama=<?php echo $r1['nama'] ?>"
                                         class="btnemail">Email</a>
 
                                 </div>
@@ -457,7 +457,7 @@ if (!empty($tgl)) {
 
                 </div>
                 <div class="box">
-                    <p>&copy; Copyright by <span><a href="rahasia.php" class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
+                    <p>&copy; Copyright by <span><a class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
                         SLAWI
                         2023, Indonesia</p>
                 </div>

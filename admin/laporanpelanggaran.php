@@ -153,7 +153,7 @@ if(isset($_POST['Login'])){
     <title>Menu Guru Moodis</title>
 </head>
 <?php if($op == 'laporan'){
-    $nama = $_GET['nama'];
+    $nama = $_GET['name'];
     
     
     
@@ -165,7 +165,7 @@ if(isset($_POST['Login'])){
             <div class="container">
                 <div class="box-navbar">
                     <div class="logo">
-                        <h1>MOODIS-Kirim Email</h1>
+                        <h1>MOODIS</h1>
                     </div>
                     <ul class="menu menubro">
 
