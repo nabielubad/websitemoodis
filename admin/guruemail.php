@@ -29,13 +29,13 @@ if(isset($_GET['token'])){
 
 
 
-//oprasi kirim email
+//oprasi kirim emaill
 
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
+function kirim_emagiil($email_penerima, $nama_penerima, $judul_email, $isi_email){
     $email_pengirim = "moodissmansawi@gmail.com";
     $nama_pengirim = "MOODIS";
     
