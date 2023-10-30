@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,36 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.alert {
+  padding: 20px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  background-color: #ddd;
 }
 .deco {
   text-decoration: none;
@@ -89,6 +120,7 @@ header {
 
 .navbar .box-navbar .menu .active a {
   background-color: #0050b3;
+  cursor: pointer;
 }
 
 .navbar .box-navbar .menu li a:hover {
@@ -176,6 +208,11 @@ header {
   width: 95%;
   margin-inline: auto;
 }
+.containertbl1 {
+  width: 95%;
+  margin-inline: auto;
+  background-color: black;
+}
 .table {
   color: white;
   border-collapse: collapse;
@@ -186,7 +223,28 @@ header {
   background-color: #e90000;
   text-decoration: none;
   color: white;
-  padding: 6px;
+  padding: 6px 15px;
+  border-radius: 10px;
+}
+.btnedit {
+  background-color: #0050b3;
+  text-decoration: none;
+  color: white;
+  padding: 6px 25px;
+  border-radius: 10px;
+}
+.btnpublish {
+  background-color: #02c702;
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+.btnemail {
+  background-color: orangered;
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
   border-radius: 10px;
 }
 .btngambar {
@@ -222,6 +280,9 @@ td {
 }
 .namatabel1 h1 {
   font-size: 30px;
+}
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .uf {
   margin-bottom: 10px;
@@ -338,31 +399,108 @@ td {
   animation: animasi;
   -webkit-animation: animasi 2s infinite;
 }
-
-@keyframes animasi {
+.atasbawah {
+  animation: atasbawah;
+  -webkit-animation: atasbawah 2s ease-out forwards;
+}
+.kirikanan {
+  animation: kirikanan;
+  -webkit-animation: kirikanan 2s ease-out forwards;
+}
+.bawahatas {
+  animation: bawahatas;
+  -webkit-animation: bawahatas 4s ease-out forwards;
+}
+.bawahatas1 {
+  animation: bawahatas1;
+  -webkit-animation: bawahatas1 3s ease-out forwards;
+  animation-delay: 0.5s;
+}
+.kirikanan1 {
+  animation: kirikanan;
+  -webkit-animation: kirikanan 4s ease-out forwards;
+  animation-delay: 0.5s;
+}
+@keyframes bawahatas {
   0% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
   }
   100% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
   }
 }
-
+@keyframes atasbawah {
+  0% {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
+@keyframes bawahatas1 {
+  0% {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
+@keyframes atasbawah1 {
+  0% {
+    transform: translateY(-90%);
+    -webkit-transform: translateY(-90%);
+    -moz-transform: translateY(-90%);
+    -ms-transform: translateY(-90%);
+    -o-transform: translateY(-90%);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
+@keyframes kirikanan {
+  0% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
 .daftar .box-daftar button {
   border: none;
   min-width: 100px;
@@ -394,6 +532,18 @@ td {
   box-shadow: 0 0 10px rgba(167, 161, 161, 0.3);
   margin-bottom: 40px;
 }
+.containerlaporr {
+  margin-top: 50px;
+  margin-inline: auto;
+  padding: 20px 25px;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.801);
+  border: 2px solid #0050b3;
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(167, 161, 161, 0.3);
+  margin-bottom: 40px;
+}
 .ngambangwrap {
   display: grid;
   place-items: center;
@@ -419,6 +569,13 @@ td {
   text-transform: uppercase;
   border-bottom: 1px solid #e8e8e872;
 }
+.containerlaporr h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e8e8e872;
+}
 .ngambang h1 {
   text-align: center;
   color: #ffffff;
@@ -430,11 +587,24 @@ td {
   text-align: left;
   color: #ffffff;
 }
+.containerlaporr label {
+  text-align: left;
+  color: #ffffff;
+}
 .ngambang label {
   text-align: left;
   color: #ffffff;
 }
 .containerlapor form input {
+  width: -webkit-fill-available;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #ffffff;
+  color: rgb(255, 255, 255);
+}
+.containerlaporr form input {
   width: -webkit-fill-available;
   padding: 8px 10px;
   margin-bottom: 15px;
@@ -458,7 +628,18 @@ td {
   height: 50px;
   padding: 5px 0;
   border: none;
-  background-color: #2f5061;
+  background-color: #0050b3;
+  font-size: 18px;
+  border-radius: 6px;
+  color: #fafafa;
+  cursor: pointer;
+}
+.containerlaporr form button {
+  width: 100%;
+  height: 50px;
+  padding: 5px 0;
+  border: none;
+  background-color: #0050b3;
   font-size: 18px;
   border-radius: 6px;
   color: #fafafa;
@@ -476,6 +657,12 @@ td {
   cursor: pointer;
 }
 .containerlapor input:hover {
+  background-color: #fafafa;
+  color: black;
+  border-radius: 5px;
+  transition: all 0.6s ease-in-out;
+}
+.containerlaporr input:hover {
   background-color: #fafafa;
   color: black;
   border-radius: 5px;
@@ -779,7 +966,7 @@ td {
 @media screen and (max-width: 620px) {
   .table th,
   td {
-    font-size: 50%;
+    font-size: 70%;
   }
   .tamahed {
     font-size: 95%;
@@ -801,6 +988,10 @@ td {
   .hero .box-hero .box:nth-child(1) p {
     margin-bottom: 5px;
   }
+  .table th,
+  td {
+    padding: 8px 10px;
+  }
 }
 @media screen and (max-width: 380px) {
   .hero .box-hero .box:nth-child(2) {
@@ -811,7 +1002,7 @@ td {
 
   .table th,
   td {
-    font-size: 30%;
+    font-size: 60%;
   }
   .tamahed {
     font-size: 80%;
@@ -831,4 +1022,160 @@ td {
   flex-direction: column;
   align-items: center;
   row-gap: 3px;
+}
+td .lap {
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 345px) {
+  td .lap {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 290px) {
+  td .lap {
+    width: 60px;
+    height: 60px;
+  }
+  .table th,
+  td {
+    padding: 8px 6px;
+  }
+}
+.overlay {
+  display: none;
+}
+.buody {
+  display: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+.buodyreg {
+  display: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+#logov {
+  display: block;
+}
+.wrapperr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.wrapperr h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.wrapperr .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+
+  margin: 30px 0;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder {
+  color: #fff;
+}
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translate(-50%);
+  font-size: 20px;
+}
+.wrapperr .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+.wrapperr .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+.wrapperr .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-link p a:hover {
+  text-decoration: underline;
 }

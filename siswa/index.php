@@ -1,5 +1,10 @@
 <?php 
-include('inc/inc_koneksi.php');
+include('../inc/inc_koneksi.php');
+session_start();
+if($_SESSION['siswa_username']==''){
+    header("location:formloginsis.php");
+    exit();
+}
 $nama = "";
 $kelas = "";
 $gambar = "";
@@ -18,7 +23,6 @@ if(isset($_POST['simpan'])){
     if($aksi == '' or $gambar ==''){
         $eror = "Silahkan isi semua data dengan benar!";
     }
-    
     $queryCek = "SELECT * FROM halaman WHERE nama = '$nama' AND kelas = '$kelas' AND aksi = '$aksi' AND gambar = '$gambar'";
 $result = $koneksi->query($queryCek);
 
@@ -28,7 +32,7 @@ if ($result->num_rows > 0){
 }
     if(empty($eror)){
         
-        move_uploaded_file($foto_tmp, 'gambar/'.$gambar);
+        move_uploaded_file($foto_tmp, '../gambar/'.$gambar);
       
         $sql1 = "insert into halaman(nama,kelas,aksi,gambar) values ('$nama','$kelas','$aksi','$gambar')";
         
@@ -36,11 +40,14 @@ if ($result->num_rows > 0){
         
         if($q1){
             $sukses = "Sukses melaporkan";
+            echo "<script>alert('Sukses Melaporkan, Data Akan Di Validasi Admin');</script>";
         }else{
             $sukses = "Gagal melaporkan";
         }
     }
-}?>
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" id="home">
 
@@ -58,10 +65,10 @@ if ($result->num_rows > 0){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="icon" href="assets/img/icon.png" />
+    <link rel="icon" href="../assets/img/icon.png" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>MOODIS - Murid Disiplin</title>
@@ -80,26 +87,26 @@ if ($result->num_rows > 0){
                         <li><a href="#guru">Guru</a></li>
                         <li><a href="#laporan">Laporan</a></li>
                         <li><a href="#laporkan">Laporkan!</a></li>
-                        <li class="active"><a href="siswa/formloginsis.php">Login</a></li>
+                        <li class="active"><a href="logout.php">Logout : <?php echo $_SESSION['siswa_username']?></a>
+                        </li>
                     </ul>
                     <i class="fa-solid fa-bars menu-bar"></i>
                 </div>
             </div>
         </div>
+
+
+
+
         </div>
         </div>
-
-
-
-
-
 
         <div class="hero">
             <div class="container">
                 <div class="box-hero">
                     <div class="box anim ">
                         <h1 class="kirikanan">
-                            MENJADI DISIPLIN <br />
+                            MENJADI DISIPLIN<br />
                             DARI YANG TERDISIPLIN!
                         </h1>
                         <p class="kirikanan">Kedisiplinan adalah kunci kesuksesan siswa di SMA Negeri 1 Slawi, membantu
@@ -108,7 +115,7 @@ if ($result->num_rows > 0){
                         <button onclick="arahkanKeTujuan()" class="ngilang bawahatas">LAPORKAN!</button>
                     </div>
                     <div class="box">
-                        <img src="assets/img/ngapung.png" alt="" class=" anim atasbawah" />
+                        <img src="../assets/img/ngapung.png" alt="" class=" anim atasbawah" />
                     </div>
                 </div>
             </div>
@@ -123,14 +130,14 @@ if ($result->num_rows > 0){
         <div class="bodi">
             <section class="cards tama">
 
-                <article class="card kirikanan1">
+                <article class="card ">
                     <div class="card-info-hover">
 
 
                     </div>
                     <div class="card-img"></div>
                     <a href="https://wa.me/+628789898034265" target="_blank">
-                        <div class="card-img-hover" style="background-image: url(assets/img/1.JPG);">
+                        <div class="card-img-hover" style="background-image: url(../assets/img/1.JPG);">
                         </div>
                     </a>
                     <div class="card-info">
@@ -144,14 +151,14 @@ if ($result->num_rows > 0){
                 </article>
 
 
-                <article class="card bawahatas1">
+                <article class="card ">
                     <div class="card-info-hover">
 
 
                     </div>
                     <div class="card-img"></div>
                     <a href="">
-                        <div class="card-img-hover" style="background-image: url(assets/img/2.JPG);">
+                        <div class="card-img-hover" style="background-image: url(../assets/img/2.JPG);">
                         </div>
                     </a>
                     <div class="card-info">
@@ -195,7 +202,7 @@ if ($result->num_rows > 0){
               $q1 = mysqli_query($koneksi,$sql1);
               $nomor =1;
               while($r1 = mysqli_fetch_array($q1)){
-                  $dir_foto = "gambar/";
+                  $dir_foto = "../gambar/";
                   $linkfoto = $r1['gambar'];
                   $urlfoto = $dir_foto.$linkfoto;
                   
@@ -208,7 +215,7 @@ if ($result->num_rows > 0){
                             <td><?php echo $r1['aksi'] ?></td>
                             <td>
                                 <?php echo '<a href="' . $urlfoto . '" target="_blank">' ?>
-                                <?php echo "<img src='gambar/".$r1['gambar']."' class='lap' style=''>"?>
+                                <?php echo "<img src='../gambar/".$r1['gambar']."' class='lap' style=''>"?>
                                 <?php    '</a>'?>
                             </td>
                         </tr>
@@ -224,18 +231,18 @@ if ($result->num_rows > 0){
 
     <div class="containerlapor " id="laporkan">
         <h1 class="namatabel1 bk">SEGERA LAPORKAN PELANGGARAN TATA TERTIB!</h1>
-        <form action="siswa/formloginsis.php" class="tama">
+        <form action="" method="post" enctype="multipart/form-data" class="tama" ">
             <label for=" nama">Nama Siswa</label><br />
             <input type="text" id="nama" value="" name="nama" /><br />
             <label for="kelas">Kelas</label><br />
             <input type="text" id="kelas" value="" name="kelas" /><br />
             <label for="aksi">Aksi*</label><br />
-            <input type="text" id="aksi" value="" name="aksi" /><br />
+            <input type="text" required id="aksi" value="" name="aksi" /><br />
 
             <label for="gambar">Bukti*</label><br />
-            <input type="file" id="gambar" name="gambar" accept="image/jpeg, image/png, image/gif" /><br />
+            <input type="file" required id="gambar" name="gambar" accept="image/jpeg, image/png, image/gif" /><br />
             <label for="aksi">* Wajib Diisi!</label><br /><br />
-            <button type="submit">LAPORKAN!</button>
+            <button type="submit" name="simpan">LAPORKAN!</button>
 
         </form>
     </div>
@@ -250,7 +257,6 @@ if ($result->num_rows > 0){
                         menjaga ketertiban di lingkungan sekolah. Aplikasi ini memungkinkan para siswa untuk melaporkan
                         pelanggaran tata tertib yang terjadi di sekolah kepada Guru Bimbingan Konseling (BK) sebagai
                         administrator, sehingga tindakan korektif dapat segera diambil.</p>
-                    <p>Versi 2.0.0 <a href="admin/formlogin.php" class="deco">GURU</a></p>
                 </div>
                 <div class="box">
 
@@ -263,8 +269,8 @@ if ($result->num_rows > 0){
     </div>
     <!-- Footer -->
 
-    <script src="dist/js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../dist/js/script.js"></script>
+
 </body>
 
 </html>

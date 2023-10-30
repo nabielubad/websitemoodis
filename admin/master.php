@@ -18,7 +18,7 @@ if(isset($_POST['Login'])){
     if($username == '' or $password == ''){
         $err    = "Silakan masukkan semua isian";
     }else{
-        $sql1   = "select * from master where username = '$uss'";
+        $sql1   = "select * from siswa where username = '$uss'";
         $q1     = mysqli_query($koneksi,$sql1);
         $r1     = mysqli_fetch_array($q1);
         $n1     = mysqli_num_rows($q1);

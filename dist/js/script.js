@@ -23,3 +23,42 @@ function arahkanKeTujuan() {
     tujuan.scrollIntoView({ behavior: "smooth" });
   }
 }
+function funedit() {
+  const tujuan = document.getElementById("edit");
+  if (tujuan) {
+    tujuan.scrollIntoView({ behavior: "smooth" });
+  }
+}
+function clearForm() {
+  var form = document.getElementById("frm");
+
+  var inputs = form.getElementsByTagName("input");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].type == "text" || inputs[i].type == "file") {
+      inputs[i].value = "";
+    }
+  }
+}
+
+var overlay = document.getElementById("loginOverlay");
+var toggleOverlayButton = document.getElementById("showLoginBtn");
+var loginForm = document.getElementById("logov");
+var registerForm = document.getElementById("regov");
+var switchToRegisterButton = document.getElementById("toglereg");
+var switchToLoginButton = document.getElementById("toglelog");
+
+toggleOverlayButton.addEventListener("click", function () {
+  if (overlay.style.display === "none" || overlay.style.display === "") {
+    overlay.style.display = "block";
+  } else {
+    overlay.style.display = "none";
+  }
+});
+switchToRegisterButton.addEventListener("click", function () {
+  loginForm.style.display = "none";
+  registerForm.style.display = "block";
+});
+switchToLoginButton.addEventListener("click", function () {
+  registerForm.style.display = "none";
+  loginForm.style.display = "block";
+});
