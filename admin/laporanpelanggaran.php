@@ -153,7 +153,8 @@ if(isset($_POST['Login'])){
     <title>Menu Guru Moodis</title>
 </head>
 <?php if($op == 'laporan'){
-    $nama = $_GET['name'];
+    $namaaa = $_GET['name'];
+    $nama = str_replace('-', ' ', $namaaa);
     
     
     
@@ -254,7 +255,7 @@ if(isset($_POST['Login'])){
 
                 </div>
                 <div class="box">
-                    <p>&copy; Copyright by <span><a href="rahasia.php" class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
+                    <p>&copy; Copyright by <span><a class="deco">Kelompok 3 (XI.3) </a></span> SMAN 1
                         SLAWI
                         2023, Indonesia</p>
                 </div>

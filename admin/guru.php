@@ -381,12 +381,15 @@ if (!empty($tgl)) {
         $sql1 = "SELECT nama, GROUP_CONCAT(aksi) AS aksi,GROUP_CONCAT(tgl_isi) AS tgl_isi, COUNT(aksi) AS jumlah FROM final GROUP BY nama order by jumlah desc";
         $q1 = mysqli_query($koneksi,$sql1);
         $nomor = 1 ;
+
         while($r1 = mysqli_fetch_array($q1)){
             $nm = $r1['nama'] ;
             $no = "0878";
             $ns = "1212";
             $opm = "email";
             $nup = $ns.$nm.$no.$opm;
+            $r1nm = $r1['nama'];
+            $namaemail = str_replace(' ', '-', $r1nm);
             ?>
                         <tr>
                             <td><?php echo $nomor++?> </td>
@@ -400,7 +403,7 @@ if (!empty($tgl)) {
 
                             <td>
                                 <div class="btnwrap">
-                                    <a href="guruemail.php?op=email&nama=<?php echo $r1['nama'] ?>"
+                                    <a href="guruemail.php?op=email&nama=<?php echo $namaemail ?>"
                                         class="btnemail">Email</a>
 
                                 </div>
