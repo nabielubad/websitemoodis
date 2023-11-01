@@ -40,7 +40,7 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     $nama_pengirim = "MOODIS";
     
     //Load Composer's autoloader
-    require getcwd().'/vendor/autoload.php';
+    require getcwd().'/../vendor/autoload.php';
     
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -83,9 +83,9 @@ if(isset($_POST['kirim'])){
     $email = $_POST['email'];
     $gambarSrc = "../assets/img/moodis.png";    
 $gam = '<img src="' . $gambarSrc . '" alt="Bunga">';
-$lok = getcwd()."/laporanpelanggaran.php?op=laporan&name=$namaasli";
+$lok = "https://moodis.redonionz.com/admin/laporanpelanggaran.php?op=laporan&name=$namaasli";
 $buttonLink = "$lok";
-$linkheader = getcwd()."/assets/img/logoemail.png";
+$linkheader = "https://moodis.redonionz.com/assets/img/logoemail.png";
 
     $judul_email = "Laporan Pelanggaran Tata-tertib : $nama";
     $isi_email = "<img src='$linkheader'/><br/>";
@@ -284,7 +284,7 @@ if(isset($_POST['Login'])){
 
 
                         <label for="aksi">Masukan Email Penerima</label><br />
-                        <input type="email" id="email" required value="" placeholder="Masukan Waktu"
+                        <input type="email" id="email" required value="" placeholder="Masukan Email"
                             name="email" /><br />
 
 
