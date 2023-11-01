@@ -1,0 +1,23 @@
+[01-Nov-2023 09:47:54 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/coba/cobaemail.php on line 44
+[01-Nov-2023 09:47:54 Asia/Jakarta] PHP Warning:  require(/home/redj3298/public_html/coba/vendor/autoload.php): Failed to open stream: No such file or directory in /home/redj3298/public_html/coba/cobaemail.php on line 9
+[01-Nov-2023 09:47:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Failed opening required '/home/redj3298/public_html/coba/vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/redj3298/public_html/coba/cobaemail.php:9
+Stack trace:
+#0 /home/redj3298/public_html/coba/cobaemail.php(67): kirim_email()
+#1 {main}
+  thrown in /home/redj3298/public_html/coba/cobaemail.php on line 9
+[01-Nov-2023 09:57:43 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/coba/cobaemail.php on line 44
+[01-Nov-2023 10:33:16 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/coba/cobaemail.php on line 44
+[01-Nov-2023 10:42:15 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 45
+[01-Nov-2023 10:42:15 Asia/Jakarta] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 46
+[01-Nov-2023 10:47:24 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 45
+[01-Nov-2023 10:47:24 Asia/Jakarta] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 46
+[01-Nov-2023 10:47:27 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 116
+[01-Nov-2023 10:47:27 Asia/Jakarta] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 117
+[01-Nov-2023 10:47:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 120
+[01-Nov-2023 10:47:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 122
+[01-Nov-2023 10:48:10 Asia/Jakarta] PHP Warning:  Undefined array key "nama" in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 116
+[01-Nov-2023 10:48:10 Asia/Jakarta] PHP Deprecated:  str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 117
+[01-Nov-2023 10:48:10 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 120
+[01-Nov-2023 10:48:10 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 122
+[01-Nov-2023 10:48:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 120
+[01-Nov-2023 10:48:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 122

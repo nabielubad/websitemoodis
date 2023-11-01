@@ -1,38 +1,13 @@
+
 <?php 
-include('../inc/inc_koneksi.php');
-
-
-session_start();
-if($_SESSION['guru_username']==''){
-    header("location:formlogin.php");
-    exit();
-}
-
-
-$nama = "";
-$kelas = "";
-$gambar = "";
-$aksi ="";
-$eror = "";
-$sukses = "";
-
 if(isset($_GET['op'])){
     $op = $_GET['op'];
 }else{
     $op = "";
 }
-if(isset($_GET['token'])){
-    $token = $_GET['token'];
-}else{
-    $token = "";
-}
 
 
-
-//oprasi kirim emaill
-
-
-    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
@@ -42,7 +17,7 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     //Load Composer's autoloader
     require getcwd().'/vendor/autoload.php';
     
-    //Create an instance; passing `true` enables exceptionss
+    //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     
     try {
@@ -74,8 +49,6 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
         return "gagal: {$mail->ErrorInfo}";
     }
 }
-//log
-
 if(isset($_POST['kirim'])){
     $namaasli = $_GET['nama'];
     $nama = str_replace('-', ' ',$namaasli);
@@ -92,8 +65,8 @@ $linkheader = "https://moodis.redonionz.com/assets/img/logoemail.png";
     $isi_email .= "Kepada Orangtua / Wali Siswa,<br/><br/>";
     $isi_email .="Kami ingin memberitahukan kepada Anda bahwa anak Anda, <b>$nama</b>, telah melakukan pelanggaran tatatertib lebih dari 5 kali dalam kurun waktu 1 bulan terakhir. Kami sangat prihatin dengan kejadian ini dan kami merasa penting untuk berbagi informasi ini dengan Anda.<br/>";
     $isi_email .= "Kami ingin bekerja sama dengan Anda untuk memastikan bahwa anak Anda memahami pentingnya mentaati aturan sekolah dan menjalani pendidikan dengan baik. Agar Anda dapat memantau pelanggaran tatatertib anak Anda, kami telah menyediakan akses ke laporan pelanggaran di laman bawah ini.<br/><br/>";
-    $isi_email .= "<a href='" . $buttonLink . "' target='blank' style='background-color: #0050b3; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Lihat Laporan Pelanggaran</a> ";
-    $isi_email .="Atau : <a href='" . $buttonLink . "' target='blank' >$buttonLink</a> <br/><br/>";
+    $isi_email .= "<a href='" . $buttonLink . "' target='blank' style='background-color: #0050b3; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;'>Lihat Laporan Pelanggaran</a> <br/><br/>";
+    $isi_email .="Atau : <a href='" . $buttonLink . "' target='blank' >$buttonLink</a> <br/>";
     
     $isi_email .= "Terima kasih atas perhatian Anda dalam hal ini.<br/><br/>";
     $isi_email .= "Hormat kami,<br/>";
@@ -103,121 +76,6 @@ $linkheader = "https://moodis.redonionz.com/assets/img/logoemail.png";
     kirim_email($email, $namaortu, $judul_email, $isi_email);
 
 }
-
-
-
-
-//oprasi hapus
-if($op == 'delete'){
-    $id = $_GET['id'];
-    $query = "SELECT gambar FROM halaman WHERE id = $id";
-    $result = mysqli_query($koneksi,$query);
-    while($row = mysqli_fetch_array($result)){ 
-    $namafile = $row['gambar'];
-    $folder = '../gambar/';
-    $lokasi = $folder.$namafile;
-    if (file_exists($lokasi)){
-        unlink($lokasi);
-    }
-    
-    }    
-    $id = $_GET['id'];
-    $sql1 = "delete from halaman where id = '$id'";
-    $q1 = mysqli_query($koneksi,$sql1);
-
-    if($q1){
-        echo "<script>alert('Data Berhasil Dihapus');</script>";
-    }
-}
-//oprasi hapus data final
-if($op == 'deletefinal'){
-    $id = $_GET['id'];
-    $sql1 = "select * from final where id = '$id'";
-    $q1 = mysqli_query($koneksi,$sql1);
-
-    if(mysqli_num_rows($q1) > 0){
-    $id = $_GET['id'];
-    $query = "SELECT gambar FROM final WHERE id = $id";
-    $result = mysqli_query($koneksi,$query);
-    while($row = mysqli_fetch_array($result)){ 
-    $namafile = $row['gambar'];
-    $folder = '../gambar/';
-    $lokasi = $folder.$namafile;
-    if (file_exists($lokasi)){
-        unlink($lokasi);
-    }
-    
-    }    
-    $id = $_GET['id'];
-    $sql1 = "delete from final where id = '$id'";
-    $q1 = mysqli_query($koneksi,$sql1);
-
-    if($q1){
-        echo "<script>alert('Data Berhasil Dihapus');</script>";
-    }
-}}
-//oprasi publish
-if($op == 'publish'){   
-    $id = $_GET['id'];
-    $sql1 = "select * from halaman where id = '$id'";
-    $q1 = mysqli_query($koneksi,$sql1);
-
-    if(mysqli_num_rows($q1) > 0){
-        $r1 = mysqli_fetch_array($q1);
-        $pub = "insert into final (nama, kelas, tgl_isi, aksi, gambar) values ('".$r1['nama']."','".$r1['kelas']."','".$r1['tgl_isi']."','".$r1['aksi']."','".$r1['gambar']."')";
-        $q2 = mysqli_query($koneksi,$pub);
-        if ($q2 === TRUE){
-            $id = $_GET['id'];
-            $sql1 = "delete from halaman where id = '$id'";
-            $q1 = mysqli_query($koneksi,$sql1);
-
-            if($q1){
-                echo "<script>alert('Data Berhasil Dipublish');</script>";
-            }            
-        }else{
-            echo "<script>alert('Data Gagal Dipublish');</script>";
-        }
-        
-    }else{
-        echo "<script>alert('Data Tidak Ada');</script>";
-    }
-}
-//upload data
-if($op == 'email'){   
-    $nama = $_GET['nama'];
-
-
-
-
-}
-//login
-$username   = "";
-$password   = "";
-$err        = "";
-$sks="";
-
-if(isset($_POST['Login'])){
-    $username       = $_POST['username'];
-    $password       = $_POST['password'];
-    $pw       = md5($password);
-    $us = md5($username);
-
-    if($username == '' or $password == ''){
-        $err    = "Silakan masukkan semua isian";
-    }
-    if(empty($error)){
-        $sql1 = "insert into master(username, password, nama) values ('$us','$pw','$username')";
-        $q1 = mysqli_query($koneksi,$sql1);
-        
-        if($q1){
-            $sks = "Username telah ditambahkan";
-        }else{
-            $err = "Gagal melaporkan";
-        }
-    }
-}
-//oprasi edit
-
 ?>
 <!DOCTYPE html>
 <html lang="en" id="home">
