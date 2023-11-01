@@ -40,7 +40,7 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     $nama_pengirim = "MOODIS";
     
     //Load Composer's autoloader
-    require getcwd().'/../vendor/autoload.php';
+    require getcwd().'/vendor/autoload.php';
     
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
