@@ -42,7 +42,7 @@ function kirim_email($email_penerima, $nama_penerima, $judul_email, $isi_email){
     //Load Composer's autoloader
     require getcwd().'/vendor/autoload.php';
     
-    //Create an instance; passing `true` enables exceptions
+    //Create an instance; passing `true` enables exceptionss
     $mail = new PHPMailer(true);
     
     try {
