@@ -21,3 +21,5 @@ Stack trace:
 [01-Nov-2023 10:48:10 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 122
 [01-Nov-2023 10:48:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 120
 [01-Nov-2023 10:48:27 Asia/Jakarta] PHP Warning:  Undefined variable $op in /home/redj3298/public_html/moodis.redonionz.com/admin/guruemail.php on line 122
+[05-Nov-2023 08:42:15 Asia/Jakarta] PHP Warning:  Undefined array key "guru_username" in /home/redj3298/public_html/moodis.redonionz.com/admin/guru.php on line 5
+[05-Nov-2023 08:59:11 Asia/Jakarta] PHP Warning:  Undefined array key "guru_username" in /home/redj3298/public_html/moodis.redonionz.com/admin/guru.php on line 5

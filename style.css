@@ -53,7 +53,18 @@ header {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  cursor: wait;
+  cursor: none;
+}
+.decog {
+  text-decoration: none;
+
+  color: white;
+  cursor: none;
+}
+.decocursor {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
 }
 .halo {
   color: #e9da00;

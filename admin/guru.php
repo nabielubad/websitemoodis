@@ -83,7 +83,15 @@ if($op == 'publish'){
 
     if(mysqli_num_rows($q1) > 0){
         $r1 = mysqli_fetch_array($q1);
-        $pub = "insert into final (nama, kelas, tgl_isi, aksi, gambar) values ('".$r1['nama']."','".$r1['kelas']."','".$r1['tgl']."','".$r1['aksi']."','".$r1['gambar']."')";
+        
+        $tgl= $r1['tgl'];
+        if (!empty($tgl)) {
+            $tgl_isi = $tgl;
+        } else {
+            $tgl_isi = $r1['tgl_isi'];
+        }
+        
+        $pub = "insert into final (nama, kelas, tgl_isi, aksi, gambar) values ('".$r1['nama']."','".$r1['kelas']."','$tgl_isi','".$r1['aksi']."','".$r1['gambar']."')";
         $q2 = mysqli_query($koneksi,$pub);
         if ($q2 === TRUE){
             $id = $_GET['id'];

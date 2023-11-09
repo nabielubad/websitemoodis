@@ -1,1 +1,0 @@
-[31-Oct-2023 07:01:07 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/redj3298/public_html/moodis.redonionz.com/inc/inc_koneksi.php on line 6
