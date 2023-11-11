@@ -17,3 +17,5 @@ if(!$koneksi){
 //$user = "root";
 //$pass = "";
 //$db = "informatika";
+
+//
