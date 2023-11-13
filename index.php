@@ -52,6 +52,8 @@ if ($result->num_rows > 0){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="keywords"
+        content="Aplikasi Moodis, Pelaporan Pelanggaran Siswa, Tata Tertib SMA Negeri 1 Slawi, Literasi Kedisiplinan Siswa, Moodis App Kelas 11.3, Pelanggaran Tata Tertib Sekolah, SMA Negeri 1 Slawi, Moodis - Aplikasi Siswa, Laporan Kedisiplinan Siswa, Web Moodis Sekolah, Pelaporan Online Siswa, Literasi Disiplin Sekolah, Aplikasi Siswa SLAWI, Sistem Pelaporan Pelanggaran, Kelas 11.3 SMA Negeri 1 Slawi, Moodis Web App, Tertib Siswa SLAWI, Web Kedisiplinan Sekolah, Moodis - Aplikasi Kedisiplinan, Siswa Berdisiplin SMA Negeri 1 Slawi, Murid Disiplin, Aplikasi Murid Disiplin, Aplikasi Murid Disiplin SMAN 1 Slawi, Tugas Informatika, Tugas Pak Fian, Nabil, Guru Bk SMAN 1 Slawi, Tata - Tertib SMAN 1 Slawi, Murid Pintar, Murid Cerdas, Pelanggaran Siswa">
 
     <!-- Font Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -114,7 +116,26 @@ if ($result->num_rows > 0){
             </div>
         </div>
     </header>
-
+    <div class="container">
+        <section class="about" id="about">
+            <div class="about-img kirikanan">
+                <img src="assets/img/kartun.png" alt="" srcset="">
+            </div>
+            <div class="about-content">
+                <h2 class="heading">Pentingnya <span>Kedisiplinan</span></h2>
+                <h3>Apa Sih Pentingnya <span>Kedisiplinan</span> Itu?</h3>
+                <p>Kedisiplinan siswa di SMA Negeri 1 Slawi adalah fondasi utama dalam menciptakan suasana belajar yang
+                    kondusif dan produktif. Tingkat kedisiplinan yang tinggi memungkinkan siswa menyesuaikan diri dengan
+                    norma-norma sekolah, menciptakan lingkungan pembelajaran yang nyaman. Kedisiplinan bukan hanya
+                    tanggung jawab individu, tetapi juga investasi bersama untuk mencapai tujuan bersama dalam
+                    pembelajaran. Kerjasama antara guru, orang tua, dan pihak sekolah diperlukan untuk membimbing siswa
+                    mengembangkan nilai-nilai disiplin, memberikan manfaat jangka panjang pada perkembangan pribadi dan
+                    akademis mereka. Dengan menjadikan kedisiplinan sebagai landasan utama, SMA Negeri 1 Slawi terus
+                    menginspirasi dan membentuk pemimpin masa depan yang tangguh dan bertanggung jawab.</p>
+                <button id="linktatib" onclick="linktatib()" class="abtcntn">LIHAT TATATERTIB</button>
+            </div>
+        </section>
+    </div>
     <div class="container">
         <h1 class="namatabel1 bk uf" id="guru">
             DAFTAR GURU BK SMAN 1 SLAWI
@@ -123,7 +144,7 @@ if ($result->num_rows > 0){
         <div class="bodi">
             <section class="cards tama">
 
-                <article class="card kirikanan1">
+                <article class="card ">
                     <div class="card-info-hover">
 
 
@@ -144,7 +165,7 @@ if ($result->num_rows > 0){
                 </article>
 
 
-                <article class="card bawahatas1">
+                <article class="card ">
                     <div class="card-info-hover">
 
 

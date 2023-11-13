@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "redj3298_nabil";
-$pass = "nabil_farah";
-$db = "redj3298_informatikates";
+$user = "root";
+$pass = "";
+$db = "informatika";
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 if(!$koneksi){
     die("gagal terkoneksi bro");

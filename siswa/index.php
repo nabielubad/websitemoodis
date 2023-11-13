@@ -121,7 +121,26 @@ if ($result->num_rows > 0){
             </div>
         </div>
     </header>
-
+    <div class="container">
+        <section class="about" id="about">
+            <div class="about-img kirikanan">
+                <img src="../assets/img/kartun.png" alt="" srcset="">
+            </div>
+            <div class="about-content">
+                <h2 class="heading">Pentingnya <span>Kedisiplinan</span></h2>
+                <h3>Apa Sih Pentingnya <span>Kedisiplinan</span> Itu?</h3>
+                <p>Kedisiplinan siswa di SMA Negeri 1 Slawi adalah fondasi utama dalam menciptakan suasana belajar yang
+                    kondusif dan produktif. Tingkat kedisiplinan yang tinggi memungkinkan siswa menyesuaikan diri dengan
+                    norma-norma sekolah, menciptakan lingkungan pembelajaran yang nyaman. Kedisiplinan bukan hanya
+                    tanggung jawab individu, tetapi juga investasi bersama untuk mencapai tujuan bersama dalam
+                    pembelajaran. Kerjasama antara guru, orang tua, dan pihak sekolah diperlukan untuk membimbing siswa
+                    mengembangkan nilai-nilai disiplin, memberikan manfaat jangka panjang pada perkembangan pribadi dan
+                    akademis mereka. Dengan menjadikan kedisiplinan sebagai landasan utama, SMA Negeri 1 Slawi terus
+                    menginspirasi dan membentuk pemimpin masa depan yang tangguh dan bertanggung jawab.</p>
+                <button id="linktatib" onclick="linktatib()" class="abtcntn">LIHAT TATATERTIB</button>
+            </div>
+        </section>
+    </div>
     <div class="container">
         <h1 class="namatabel1 bk uf" id="guru">
             DAFTAR GURU BK SMAN 1 SLAWI

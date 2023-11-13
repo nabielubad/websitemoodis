@@ -29,6 +29,12 @@ function funedit() {
     tujuan.scrollIntoView({ behavior: "smooth" });
   }
 }
+function linktatib() {
+  window.open(
+    "https://docs.google.com/document/d/1BhttxF498hJkwKjAaojs75k2ZWX67GLv/edit?usp=drive_link&ouid=109311719393236139419&rtpof=true&sd=true",
+    "_blank"
+  );
+}
 function clearForm() {
   var form = document.getElementById("frm");
 

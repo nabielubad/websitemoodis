@@ -12,12 +12,100 @@ body {
 }
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
     url("assets/img/anaksmadpn.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 70px;
+}
+
+.about-img img {
+  width: 370px;
+  cursor: pointer;
+}
+.about-img img:hover {
+  transform: scale(1.1, 1.1);
+}
+.heading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.about-content .abtcntn {
+  width: 180px;
+  height: 50px;
+  background-color: #0050b3;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.about-content .abtcntn:hover {
+  background-color: #053e83;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.heading span,
+.about-content h3 span {
+  color: #0050b3;
+}
+.about-content h2 {
+  color: white;
+  text-align: left;
+  line-height: 1.2;
+}
+.about-content h3 {
+  color: white;
+  font-size: 1.9rem;
+}
+.about-content p {
+  color: white;
+  font-size: 1rem;
+  margin: 1rem 0 1rem;
+}
+@media screen and (max-width: 500px) {
+  .about-img img {
+    width: 190px;
+  }
+  .about-content h2 {
+    font-size: 20px;
+  }
+  .about-content h3 {
+    font-size: 25px;
+  }
+  .about-content p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .about-content h2 {
+    font-size: 15px;
+  }
+  .about-content h3 {
+    font-size: 20px;
+  }
+  .about-content p {
+    font-size: 10px;
+  }
+  .about-img img {
+    width: 150px;
+  }
 }
 .alert {
   padding: 20px;
@@ -748,6 +836,11 @@ td {
 }
 
 @media screen and (max-width: 990px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+
   .menu-bar {
     display: block;
   }
@@ -1038,20 +1131,35 @@ td .lap {
   width: 100px;
   height: 100px;
 }
-@media screen and (max-width: 345px) {
-  td .lap {
-    width: 60px;
-    height: 60px;
-  }
-}
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 355px) {
   td .lap {
     width: 60px;
     height: 60px;
   }
   .table th,
   td {
-    padding: 8px 6px;
+    padding: 5px 4px;
+    font-size: 8px;
+  }
+  .bk {
+    font-size: 24px;
+  }
+  h3 .card-title {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 290px) {
+  td .lap {
+    width: 40px;
+    height: 40px;
+  }
+  .table th,
+  td {
+    padding: 5px 4px;
+    font-size: 7px;
+  }
+  .bk {
+    font-size: 18px;
   }
 }
 .overlay {
