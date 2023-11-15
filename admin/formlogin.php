@@ -112,7 +112,7 @@ if(isset($_POST['Login'])){
                     </p>
 
                 </div>
-                <img src="../assets/img/moodis1.png" class="image" alt="" />
+                <img src="../assets/img/moodis1.png" class="image keindex" alt="" onclick="kemenuindex()" />
             </div>
             <div class="panel right-panel">
                 <div class="content">

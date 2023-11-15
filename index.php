@@ -271,7 +271,8 @@ if ($result->num_rows > 0){
                         menjaga ketertiban di lingkungan sekolah. Aplikasi ini memungkinkan para siswa untuk melaporkan
                         pelanggaran tata tertib yang terjadi di sekolah kepada Guru Bimbingan Konseling (BK) sebagai
                         administrator, sehingga tindakan korektif dapat segera diambil.</p>
-                    <p>Versi 2.0.1 >>> <a href="admin/formlogin.php" class="decog">GURU</a>
+                    <p>Versi 2.0.1<a href="readme.txt" class="deco1"> Lihat Apa Yang Baru!</a></br><a
+                            href="admin/formlogin.php" class="decog">>> Menu GURU << </a>
                     </p>
 
                 </div>

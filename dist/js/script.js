@@ -68,3 +68,9 @@ switchToLoginButton.addEventListener("click", function () {
   registerForm.style.display = "none";
   loginForm.style.display = "block";
 });
+
+var tom = document.querySelector(".keindex");
+
+tom.addEventListener("click", function () {
+  window.location.href = "../../index.php";
+});

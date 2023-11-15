@@ -142,7 +142,7 @@ if(isset($_POST['registrasi'])){
                         Registrasi
                     </button>
                 </div>
-                <img src="../assets/img/moodis1.png" class="image" alt="" />
+                <img src="../assets/img/moodis1.png" class="image keindex" alt="" onclick="kemenuindex()" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -154,7 +154,7 @@ if(isset($_POST['registrasi'])){
                         Login
                     </button>
                 </div>
-                <img src="../assets/img/moodis1.png" class="image" alt="" />
+                <img src="../assets/img/moodis1.png" class="image keindex" alt="" onclick="kemenuindex()" />
             </div>
         </div>
     </div>

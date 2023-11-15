@@ -143,11 +143,17 @@ header {
   color: white;
   cursor: none;
 }
+.deco1 {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
 .decog {
   text-decoration: none;
 
   color: white;
-  cursor: none;
+  cursor: not-allowed;
 }
 .decocursor {
   text-decoration: none;
